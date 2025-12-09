@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - LuxeAttire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#4f46e5', secondary: '#ec4899', } } } }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
+
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm dark:bg-gray-900/90 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex-shrink-0 flex items-center">
+                    <i class="fa-solid fa-layer-group text-primary text-2xl mr-2"></i>
+                    <span class="font-bold text-xl tracking-tight">LuxeAttire</span>
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                    <a href="about.html" class="hover:text-primary transition-colors">About</a>
+                    <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+                        <i id="themeIcon" class="fa-solid fa-moon"></i>
+                    </button>
+                    <button class="md:hidden p-2" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-gray-900 border-t dark:border-gray-700">
+            <a href="index.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">Home</a>
+            <a href="about.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">About</a>
+            <a href="contact.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">Contact</a>
+        </div>
+    </nav>
+
+    <main class="pt-24 min-h-screen px-4 max-w-7xl mx-auto pb-10">
+        
+        <div class="mb-6 flex items-center justify-between">
+            <a href="index.html" class="text-sm font-medium text-gray-500 hover:text-primary transition-colors">
+                <i class="fa-solid fa-arrow-left mr-1"></i> Back to Products
+            </a>
+        </div>
+
+        <div id="product-container" class="grid grid-cols-1 md:grid-cols-2 gap-10 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 md:p-10">
+            
+            <div class="w-full bg-gray-100 rounded-xl overflow-hidden shadow-inner">
+                <img id="p-img" src="" alt="Product Image" class="w-full h-full object-cover hover:scale-105 transition duration-500 cursor-zoom-in">
+            </div>
+
+            <div class="flex flex-col justify-center">
+                <div class="mb-2">
+                    <span id="p-cat" class="text-xs font-bold uppercase tracking-wider text-secondary bg-pink-100 dark:bg-pink-900 px-2 py-1 rounded">Category</span>
+                </div>
+                
+                <h1 id="p-name" class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">Product Name</h1>
+                <div class="flex items-center mb-6">
+                    <span id="p-price" class="text-2xl font-bold text-primary mr-4">$0.00</span>
+                    <div class="flex text-yellow-400 text-sm">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <span class="ml-1 text-gray-400 dark:text-gray-500">(24 reviews)</span>
+                    </div>
+                </div>
+
+                <div class="prose dark:prose-invert mb-8">
+                    <p id="p-desc" class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
+                        Product description...
+                    </p>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-bold mb-2">Select Size</label>
+                    <div class="flex gap-2">
+                        <button class="w-10 h-10 border rounded hover:border-primary focus:bg-primary focus:text-white transition">S</button>
+                        <button class="w-10 h-10 border rounded hover:border-primary focus:bg-primary focus:text-white transition">M</button>
+                        <button class="w-10 h-10 border rounded hover:border-primary focus:bg-primary focus:text-white transition">L</button>
+                        <button class="w-10 h-10 border rounded hover:border-primary focus:bg-primary focus:text-white transition">XL</button>
+                    </div>
+                </div>
+
+                <div class="border-t dark:border-gray-700 pt-6">
+                    <button class="w-full bg-gray-200 dark:bg-gray-700 text-gray-400 cursor-not-allowed font-bold py-4 rounded-xl flex justify-center items-center gap-3 text-lg">
+                        <i class="fa-solid fa-lock"></i>
+                        <span>Ordering Currently Disabled</span>
+                    </button>
+                    <p class="text-center text-xs text-gray-400 mt-2">This is a demo display unit.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="error-container" class="hidden text-center py-20">
+            <i class="fa-solid fa-circle-exclamation text-4xl text-gray-400 mb-4"></i>
+            <h2 class="text-2xl font-bold">Product Not Found</h2>
+            <p class="mb-6 text-gray-500">The product you are looking for does not exist.</p>
+            <a href="index.html" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-indigo-700">Go Home</a>
+        </div>
+
+    </main>
+
+    <script>
+        // DATA SOURCE (Must match index.html data)
+        const products = [
+            { id: 1, name: "Urban Bomber", category: "men", price: 89.99, img: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=600", desc: "A sleek, lightweight bomber jacket perfect for city evenings. Features weather-resistant fabric and premium zippers for durability and style." },
+            { id: 2, name: "Summer Dress", category: "women", price: 59.50, img: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=600", desc: "Breathable cotton blend with a vibrant floral pattern. Ideal for beach outings or casual brunch. Lightweight and airy for hot summer days." },
+            { id: 3, name: "Leather Watch", category: "accessories", price: 120.00, img: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=600", desc: "Minimalist design with a genuine leather strap and stainless steel face. Water-resistant up to 50 meters. A timeless classic." },
+            { id: 4, name: "Fit Chinos", category: "men", price: 45.00, img: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=600", desc: "Comfortable stretch cotton chinos available in various earth tones. A wardrobe staple that pairs well with both casual and formal tops." },
+        ];
+
+        // LOAD PRODUCT LOGIC
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Get ID from URL (e.g., product.html?id=1)
+            const params = new URLSearchParams(window.location.search);
+            const id = parseInt(params.get('id'));
+
+            // 2. Find product in array
+            const product = products.find(p => p.id === id);
+
+            if (product) {
+                // 3. Populate HTML
+                document.getElementById('p-img').src = product.img;
+                document.getElementById('p-name').textContent = product.name;
+                document.getElementById('p-price').textContent = `$${product.price}`;
+                document.getElementById('p-cat').textContent = product.category;
+                document.getElementById('p-desc').textContent = product.desc;
+                document.title = `${product.name} - LuxeAttire`;
+            } else {
+                // 4. Handle Not Found
+                document.getElementById('product-container').classList.add('hidden');
+                document.getElementById('error-container').classList.remove('hidden');
+            }
+
+            // Theme Check
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+        });
+
+        // Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) { html.classList.remove('dark'); localStorage.setItem('theme', 'light'); }
+            else { html.classList.add('dark'); localStorage.setItem('theme', 'dark'); }
+        }
+    </script>
+</body>
+</html>
