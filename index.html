@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clothify | Home</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- ===== Navbar ===== -->
+  <nav class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Clothify</h1>
+
+      <ul class="hidden md:flex space-x-6 font-medium">
+        <li><a href="#" class="hover:text-black">Home</a></li>
+        <li><a href="#" class="hover:text-black">Products</a></li>
+        <li><a href="#" class="hover:text-black">About</a></li>
+        <li><a href="#" class="hover:text-black">Contact</a></li>
+      </ul>
+
+      <div class="flex items-center gap-2">
+        🛒 <span id="cartCount" class="bg-black text-white px-3 py-1 rounded-full text-sm">0</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="bg-black text-white py-20 text-center">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">
+      New Fashion Collection
+    </h2>
+    <p class="text-gray-300 mb-6">
+      Simple • Modern • Affordable
+    </p>
+    <a href="#products" class="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">
+      Shop Now
+    </a>
+  </section>
+
+  <!-- ===== Featured Products ===== -->
+  <section id="products" class="max-w-7xl mx-auto px-4 py-14">
+    <h3 class="text-3xl font-semibold text-center mb-10">Featured Products</h3>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+      <!-- Product Card -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-4">
+        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b"
+             class="h-48 w-full object-cover rounded-lg mb-4">
+        <h4 class="font-semibold text-lg">Classic T-Shirt</h4>
+        <p class="text-gray-600">$15.00</p>
+        <button onclick="addToCart()"
+          class="mt-4 w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800">
+          Add to Cart
+        </button>
+      </div>
+
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-4">
+        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f"
+             class="h-48 w-full object-cover rounded-lg mb-4">
+        <h4 class="font-semibold text-lg">Denim Jacket</h4>
+        <p class="text-gray-600">$45.00</p>
+        <button onclick="addToCart()"
+          class="mt-4 w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800">
+          Add to Cart
+        </button>
+      </div>
+
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-4">
+        <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb"
+             class="h-48 w-full object-cover rounded-lg mb-4">
+        <h4 class="font-semibold text-lg">Hoodie</h4>
+        <p class="text-gray-600">$30.00</p>
+        <button onclick="addToCart()"
+          class="mt-4 w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800">
+          Add to Cart
+        </button>
+      </div>
+
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-4">
+        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f"
+             class="h-48 w-full object-cover rounded-lg mb-4">
+        <h4 class="font-semibold text-lg">Casual Shoes</h4>
+        <p class="text-gray-600">$35.00</p>
+        <button onclick="addToCart()"
+          class="mt-4 w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800">
+          Add to Cart
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="bg-white text-center py-6 text-gray-500">
+    © 2025 Clothify. All rights reserved.
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    let cart = 0;
+
+    function addToCart() {
+      cart++;
+      document.getElementById("cartCount").innerText = cart;
+    }
+  </script>
+
+</body>
+</html>
